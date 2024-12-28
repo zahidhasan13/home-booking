@@ -1,5 +1,5 @@
 import React from "react";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const PageHero = ({ title }) => {
@@ -12,8 +12,8 @@ const PageHero = ({ title }) => {
     >
       <h2 className="text-5xl font-bold uppercase text-white">{title}</h2>
       <div className="flex items-center justify-center gap-1">
-        <Link to="/" className="text-xl font-bold text-white/75">
-          Home
+        <Link to="/" className="text-2xl text-white/75">
+          <MdHome />
         </Link>
         <span className="text-2xl font-bold text-white/75">
           <MdKeyboardArrowRight />

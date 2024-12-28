@@ -8,7 +8,7 @@
   @apply text-lg font-semibold uppercase text-green-500 border-b border-green-600;
 }
 .btn-primary {
-  @apply text-lg font-semibold text-white bg-green-500 px-3 py-1 rounded;
+  @apply text-lg font-semibold text-white bg-green-500 hover:bg-green-700 transition-all duration-300 px-3 py-1 rounded;
 }
 /* .header {
   position: relative;

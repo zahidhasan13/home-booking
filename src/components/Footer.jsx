@@ -85,6 +85,7 @@ const Footer = () => {
                 id="name"
                 placeholder="Name"
                 className="w-full px-4 py-2 bg-transparent border border-green-700 rounded-md focus:outline-none focus:border-white"
+                required
               />
             </div>
 
@@ -97,6 +98,7 @@ const Footer = () => {
                 id="email"
                 placeholder="Email"
                 className="w-full px-4 py-2 bg-transparent border border-green-700 rounded-md focus:outline-none focus:border-white"
+                required
               />
             </div>
 
@@ -112,6 +114,7 @@ const Footer = () => {
                 rows="2"
                 placeholder="Message"
                 className="w-full px-4 py-2 bg-transparent border border-green-700 rounded-md focus:outline-none focus:border-white"
+                required
               ></textarea>
             </div>
 
