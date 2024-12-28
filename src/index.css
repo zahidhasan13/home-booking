@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.navActive {
+  @apply text-lg font-semibold text-gray-500 uppercase hover:text-sky-500;
+}
+.navInActive {
+  @apply text-lg font-semibold uppercase text-sky-500;
+}
+.btn-primary {
+  @apply text-lg font-semibold text-white bg-sky-500 px-3 py-1 rounded;
+}
+/* .header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  height: 80px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transition: 0.5s;
+}
+
+.header.sticky {
+  position: fixed;
+} */
