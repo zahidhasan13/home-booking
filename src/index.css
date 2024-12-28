@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 .navActive {
-  @apply text-lg font-semibold text-gray-500 uppercase hover:text-sky-500;
+  @apply text-lg font-semibold text-gray-500 uppercase hover:text-green-500;
 }
 .navInActive {
-  @apply text-lg font-semibold uppercase text-sky-500;
+  @apply text-lg font-semibold uppercase text-green-500 border-b border-green-600;
 }
 .btn-primary {
-  @apply text-lg font-semibold text-white bg-sky-500 px-3 py-1 rounded;
+  @apply text-lg font-semibold text-white bg-green-500 px-3 py-1 rounded;
 }
 /* .header {
   position: relative;

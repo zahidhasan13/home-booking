@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
 import {
   IoCloseSharp,
   IoLocationOutline,
   IoMailOutline,
 } from "react-icons/io5";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { NavLink, Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,18 +17,27 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="bg-sky-600 hidden md:block">
+      <div className="bg-green-600 hidden md:block">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           {/* Left Section: Social Icons */}
           <div className="flex space-x-4">
-            <a href="#" className="text-white text-2xl">
-              <FaFacebook />
+            <a
+              href="#"
+              className="text-white text-2xl border border-white rounded-md p-1 hover:bg-sky-600 hover:border-sky-600 transition-all duration-300"
+            >
+              <FiFacebook />
             </a>
-            <a href="#" className="text-white text-2xl">
-              <FaInstagram />
+            <a
+              href="#"
+              className="text-white text-2xl border border-white rounded-md p-1 hover:bg-rose-600 hover:border-rose-600 transition-all duration-300"
+            >
+              <FiInstagram />
             </a>
-            <a href="#" className="text-white text-2xl">
-              <FaTwitter />
+            <a
+              href="#"
+              className="text-white text-2xl border border-white rounded-md p-1 hover:bg-sky-400 hover:border-sky-400 transition-all duration-300"
+            >
+              <FiTwitter />
             </a>
           </div>
 
@@ -60,7 +69,7 @@ const Header = () => {
         {/* Left Section: Logo */}
         <Link to="/">
           <span className="text-2xl font-bold uppercase">
-            home <span className="text-sky-500">booking</span>
+            home <span className="text-green-500">booking</span>
           </span>
         </Link>
 
@@ -69,6 +78,7 @@ const Header = () => {
           {["home", "property", "about", "faq", "contact"].map((link) => (
             <NavLink
               to={link === "home" ? "/" : `/${link}`}
+              key={link}
               className={({ isActive }) =>
                 !isActive ? "navActive" : "navInActive"
               }
