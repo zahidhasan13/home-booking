@@ -131,6 +131,7 @@ const Header = () => {
               <li key={link}>
                 <NavLink
                   to={link === "home" ? "/" : `/${link}`}
+                  onClick={toggleMenu}
                   className={({ isActive }) =>
                     !isActive ? "navActive block" : "navInActive block"
                   }
