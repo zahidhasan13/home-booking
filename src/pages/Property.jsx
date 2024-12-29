@@ -2,6 +2,7 @@ import React from "react";
 import PageHero from "../components/PageHero";
 import ApartmentSearchForm from "../components/ApartmentSearchForm";
 import AllProperty from "../components/AllProperty";
+import PropertyFilters from "../components/PropertyFilters";
 
 const Property = () => {
   return (
@@ -11,9 +12,11 @@ const Property = () => {
         <div className="my-5 bg-white p-4 rounded-lg shadow-md">
           <ApartmentSearchForm />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <div className="col-span-1"></div>
-          <div className="col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 mt-14">
+          <div className="col-span-1">
+            <PropertyFilters />
+          </div>
+          <div className="col-span-3">
             <AllProperty />
           </div>
         </div>

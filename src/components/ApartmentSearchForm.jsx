@@ -71,7 +71,7 @@ const ApartmentSearchForm = () => {
           className="mt-1 px-2 py-1 w-full border border-gray-200 rounded focus:outline-none focus:border-green-500"
         >
           <option value="">All</option>
-          <option value="furnished">Furnished</option>
+          <option value="furnished">Full Furnished</option>
           <option value="semifurnished">Semi Furnished</option>
           <option value="unfurnished">Unfurnished</option>
         </select>
