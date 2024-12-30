@@ -1,150 +1,98 @@
-import React from "react";
-import PageHero from "../components/PageHero";
+import React, { useState } from "react";
 
 const Faq = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const faqs = [
+    {
+      question: "What is this website about?",
+      answer:
+        "This website helps you rent or buy homes easily by providing a wide range of properties to choose from.",
+    },
+    {
+      question: "How do I contact support?",
+      answer:
+        "You can reach our support team by visiting the Contact Us page or emailing us at support@yourwebsite.com.",
+    },
+    {
+      question: "Are there any hidden fees?",
+      answer:
+        "No, there are no hidden fees. All costs are transparently displayed during the process.",
+    },
+    {
+      question: "Can I schedule a visit to a property?",
+      answer:
+        "Yes, you can schedule a visit directly from the property details page or by contacting us.",
+    },
+    {
+      question: "Is my personal information secure?",
+      answer:
+        "Absolutely. We prioritize your privacy and ensure that your personal information is handled securely.",
+    },
+  ];
+
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
-    <div>
-      <PageHero title="Faq" />
-      <div className="bg-gray-50 py-12">
-        <div className="container mx-auto max-w-7xl px-6 lg:px-12">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-base lg:text-lg text-gray-600 mt-4">
-              Find answers to the most common questions about renting or buying
-              homes through our platform.
-            </p>
-          </div>
-
-          {/* FAQ Section */}
-          <div className="space-y-6">
-            {/* Question 1 */}
-            <div className="bg-white p-6 rounded-lg shadow">
-              <button className="w-full flex justify-between items-center text-left focus:outline-none">
-                <span className="text-lg font-semibold text-gray-800">
-                  How do I search for homes on this platform?
+    <div className="bg-gray-50 py-12">
+      <div className="container mx-auto max-w-4xl px-6">
+        <h1 className="text-3xl lg:text-4xl font-bold text-center text-gray-800">
+          Frequently Asked Questions
+        </h1>
+        <p className="text-center text-gray-600 mt-4 mb-8">
+          Find answers to commonly asked questions about our services.
+        </p>
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <div key={index} className="border border-gray-200 rounded-lg p-4">
+              <div
+                onClick={() => toggleFAQ(index)}
+                className="flex justify-between items-center cursor-pointer"
+              >
+                <h3 className="text-lg font-medium text-gray-800">
+                  {faq.question}
+                </h3>
+                <span>
+                  {activeIndex === index ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-green-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M18 12H6"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-gray-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 6v12m6-6H6"
+                      />
+                    </svg>
+                  )}
                 </span>
-                <svg
-                  className="w-5 h-5 text-gray-600 transform group-hover:rotate-180 transition-transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div className="mt-4 text-gray-600">
-                <p>
-                  Use the search bar on our homepage to filter properties by
-                  location, price, property type, and status (rent or buy).
-                </p>
               </div>
+              {activeIndex === index && (
+                <p className="mt-4 text-gray-600">{faq.answer}</p>
+              )}
             </div>
-
-            {/* Question 2 */}
-            <div className="bg-white p-6 rounded-lg shadow">
-              <button className="w-full flex justify-between items-center text-left focus:outline-none">
-                <span className="text-lg font-semibold text-gray-800">
-                  Are the property listings verified?
-                </span>
-                <svg
-                  className="w-5 h-5 text-gray-600 transform group-hover:rotate-180 transition-transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div className="mt-4 text-gray-600">
-                <p>
-                  Yes, all listings go through a verification process to ensure
-                  accuracy and authenticity.
-                </p>
-              </div>
-            </div>
-
-            {/* Question 3 */}
-            <div className="bg-white p-6 rounded-lg shadow">
-              <button className="w-full flex justify-between items-center text-left focus:outline-none">
-                <span className="text-lg font-semibold text-gray-800">
-                  What is the process for renting a home?
-                </span>
-                <svg
-                  className="w-5 h-5 text-gray-600 transform group-hover:rotate-180 transition-transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div className="mt-4 text-gray-600">
-                <p>
-                  Once you find a property, contact the owner or agent through
-                  our platform. Schedule a visit, finalize terms, and sign the
-                  rental agreement securely.
-                </p>
-              </div>
-            </div>
-
-            {/* Question 4 */}
-            <div className="bg-white p-6 rounded-lg shadow">
-              <button className="w-full flex justify-between items-center text-left focus:outline-none">
-                <span className="text-lg font-semibold text-gray-800">
-                  How can I contact customer support?
-                </span>
-                <svg
-                  className="w-5 h-5 text-gray-600 transform group-hover:rotate-180 transition-transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div className="mt-4 text-gray-600">
-                <p>
-                  You can reach us via email at{" "}
-                  <a
-                    href="mailto:support@yourwebsite.com"
-                    className="text-blue-500"
-                  >
-                    support@yourwebsite.com
-                  </a>{" "}
-                  or call our helpline available on the Contact Us page.
-                </p>
-              </div>
-            </div>
-
-            {/* Add More Questions as Needed */}
-          </div>
+          ))}
         </div>
       </div>
     </div>
