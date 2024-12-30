@@ -2,8 +2,9 @@ import React from "react";
 
 const ApartmentSearchForm = () => {
   return (
-    <form className="flex gap-4 items-end justify-between">
-      <div className="flex-1">
+    <form className="flex flex-wrap gap-4 items-end justify-between">
+      {/* Location Field */}
+      <div className="flex-1 min-w-[200px]">
         <label
           htmlFor="location"
           className="block text-sm font-medium text-gray-700"
@@ -19,7 +20,8 @@ const ApartmentSearchForm = () => {
         />
       </div>
 
-      <div className="flex-1">
+      {/* Status Field */}
+      <div className="flex-1 min-w-[200px]">
         <label
           htmlFor="status"
           className="block text-sm font-medium text-gray-700"
@@ -36,7 +38,8 @@ const ApartmentSearchForm = () => {
         </select>
       </div>
 
-      <div className="flex-1">
+      {/* Property Type Field */}
+      <div className="flex-1 min-w-[200px]">
         <label
           htmlFor="propertyType"
           className="block text-sm font-medium text-gray-700"
@@ -59,7 +62,8 @@ const ApartmentSearchForm = () => {
         </select>
       </div>
 
-      <div className="flex-1">
+      {/* Furnished Field */}
+      <div className="flex-1 min-w-[200px]">
         <label
           htmlFor="furnished"
           className="block text-sm font-medium text-gray-700"
@@ -77,8 +81,9 @@ const ApartmentSearchForm = () => {
         </select>
       </div>
 
+      {/* Submit Button */}
       <div className="">
-        <button type="submit" className="btn-primary">
+        <button type="submit" className="btn-primary w-full sm:w-auto">
           Search
         </button>
       </div>
