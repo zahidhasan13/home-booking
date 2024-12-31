@@ -68,9 +68,9 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Left Section: Logo */}
         <Link to="/">
-          <span className="text-2xl font-bold uppercase">
+          <h3 className="text-2xl font-bold uppercase">
             home <span className="text-green-500">booking</span>
-          </span>
+          </h3>
         </Link>
 
         {/* Right Section: Navigation Menu */}

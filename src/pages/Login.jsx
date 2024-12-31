@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+    <div className="flex flex-col items-center justify-center gap-5 min-h-screen bg-gray-50">
+      <h3 className="text-2xl font-bold uppercase">
+        home <span className="text-green-500">booking</span>
+      </h3>
       <div className="bg-white shadow-lg rounded-lg p-6 max-w-md w-full">
         <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center">
           Login to Your Account
