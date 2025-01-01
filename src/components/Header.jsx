@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FiFacebook, FiInstagram, FiTwitter } from "react-icons/fi";
 import {
   IoCloseSharp,
@@ -7,9 +7,13 @@ import {
 } from "react-icons/io5";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
+import LoadingAuth from "./LoadingAuth";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, loading } = useContext(AuthContext);
+  console.log(user);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -86,9 +90,17 @@ const Header = () => {
               {link}
             </NavLink>
           ))}
-          <Link to="/login">
-            <button className="btn-primary">Login</button>
-          </Link>
+          {user ? (
+            <Link to="/user-profile">
+              <span className="bg-green-500 text-xl text-white rounded-full h-10 w-10 flex items-center justify-center border border-black">
+                {user?.displayName?.slice(0, 1)?.toUpperCase()}
+              </span>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="btn-primary">Login</button>
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}

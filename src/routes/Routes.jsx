@@ -9,6 +9,8 @@ import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import NotFound from "../pages/NotFound";
+import UserProfile from "../pages/UserProfile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/property/:id",
-        element: <PropertyDetails />,
+        element: (
+          <PrivateRoute>
+            <PropertyDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",
@@ -38,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/user-profile",
+        element: (
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        ),
       },
     ],
   },

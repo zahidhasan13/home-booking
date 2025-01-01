@@ -1,7 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
+  const { register, handleSubmit, reset } = useForm();
+  const { logInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    logInUser(email, password).then((result) => {
+      const loggedUser = result.user;
+      reset();
+      navigate(from, { replace: true });
+    });
+  };
   return (
     <div className="flex flex-col items-center justify-center gap-5 min-h-screen bg-gray-50">
       <h3 className="text-2xl font-bold uppercase">
@@ -11,7 +28,7 @@ const Login = () => {
         <h1 className="text-2xl font-bold text-gray-800 mb-4 text-center">
           Login to Your Account
         </h1>
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
             <label
               htmlFor="email"
@@ -22,6 +39,7 @@ const Login = () => {
             <input
               type="email"
               id="email"
+              {...register("email")}
               placeholder="Enter your email"
               className="mt-1 px-3 py-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
               required
@@ -37,6 +55,7 @@ const Login = () => {
             <input
               type="password"
               id="password"
+              {...register("password")}
               placeholder="Enter your password"
               className="mt-1 px-3 py-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
               required

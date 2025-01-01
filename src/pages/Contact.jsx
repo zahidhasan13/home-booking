@@ -7,19 +7,8 @@ const Contact = () => {
   return (
     <div>
       <PageHero title="Contact" />
-      <div className="bg-gray-50 py-12">
+      <div className="bg-green-50 py-12">
         <div className="container mx-auto max-w-7xl px-6 lg:px-12">
-          {/* Page Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-800">
-              Contact Us
-            </h1>
-            <p className="text-base lg:text-lg text-gray-600 mt-4">
-              Have questions or need assistance? We’re here to help! Reach out
-              to us anytime.
-            </p>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -123,6 +112,17 @@ const Contact = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="container mx-auto px-4 lg:px-0 mt-10">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.03615786845!2d-74.30934159824935!3d40.6975399481381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1735636057164!5m2!1sen!2sbd"
+            height="450"
+            style={{ border: 0 }}
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            className="w-full"
+          ></iframe>
         </div>
       </div>
     </div>
