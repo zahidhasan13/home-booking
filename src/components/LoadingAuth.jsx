@@ -2,10 +2,13 @@ import React from "react";
 
 const LoadingAuth = () => {
   return (
-    <div role="status">
+    <div
+      role="status"
+      className="flex justify-center items-center min-h-screen"
+    >
       <svg
         aria-hidden="true"
-        className="inline w-4 h-4 text-gray-200 animate-spin fill-green-500"
+        class="inline w-10 h-10 text-green-200 animate-spin fill-green-600"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
